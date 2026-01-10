@@ -29,10 +29,10 @@ const products = [
   },
   {
     id: 'prod_2',
-    name: 'デニムジャケット',
+    name: 'ヴィンテージ風デニムパンツ',
     price: 12800,
     image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=400',
-    description: 'ヴィンテージ風デニムジャケット',
+    description: 'ヴィンテージ風デニムパンツ',
   },
   {
     id: 'prod_3',
@@ -47,6 +47,20 @@ const products = [
     price: 4500,
     image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=400',
     description: '大容量キャンバス素材トートバッグ',
+  },
+  {
+    id: 'prod_5',
+    name: 'ウールニットセーター',
+    price: 9800,
+    image: 'https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=400',
+    description: '柔らかなウール素材の暖かいセーター',
+  },
+  {
+    id: 'prod_6',
+    name: 'レザー・バックパック',
+    price: 5500,
+    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400',
+    description: 'レザー・クラシックバックパック',
   },
 ];
 

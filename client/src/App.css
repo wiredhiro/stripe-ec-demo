@@ -84,12 +84,26 @@ nav {
 .product-list h1 {
   margin-bottom: 2rem;
   font-size: 1.75rem;
+  text-align: center;
 }
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 280px);
   gap: 2rem;
+  justify-content: center;
+}
+
+@media (max-width: 960px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 280px);
+  }
+}
+
+@media (max-width: 620px) {
+  .products-grid {
+    grid-template-columns: 280px;
+  }
 }
 
 .product-card {
