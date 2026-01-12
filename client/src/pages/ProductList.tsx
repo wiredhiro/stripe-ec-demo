@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { Product } from '../types';
 import { useCart } from '../context/CartContext';
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+import { config } from '../config';
 
 export default function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -10,7 +9,7 @@ export default function ProductList() {
   const { addToCart } = useCart();
 
   useEffect(() => {
-    fetch(`${API_URL}/api/products`)
+    fetch(`${config.apiUrl}/api/products`)
       .then(res => res.json())
       .then(data => {
         setProducts(data);

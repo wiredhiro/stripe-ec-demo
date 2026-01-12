@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+import { config } from '../config';
 
 export default function Cart() {
   const { items, updateQuantity, removeFromCart, totalPrice } = useCart();
@@ -12,7 +11,7 @@ export default function Cart() {
 
     setLoading(true);
     try {
-      const response = await fetch(`${API_URL}/api/create-checkout-session`, {
+      const response = await fetch(`${config.apiUrl}/api/create-checkout-session`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -99,9 +98,11 @@ export default function Cart() {
         >
           {loading ? '処理中...' : 'レジに進む'}
         </button>
-        <p className="test-card-info">
-          テスト用カード番号: 4242 4242 4242 4242
-        </p>
+{!config.isProduction && (
+          <p className="test-card-info">
+            テスト用カード番号: 4242 4242 4242 4242
+          </p>
+        )}
       </div>
     </div>
   );
